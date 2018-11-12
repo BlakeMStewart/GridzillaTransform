@@ -1,7 +1,7 @@
-## GridzillaTransform
+# GridzillaTransform
 This project provides a javascript class that will transform a screen buffer to ArtNet data for the Gridzilla light display.
 
-# Assumptions
+## Assumptions
 The screen buffer uses a logical X,Y coordinate system where the origin is in the lower left corner.   
 The format of the screen buffer is a two dimensional array where each cell contains a 3 eleemnt array of RGB values. 
 The screen buffer has a resolution of 168 x 36.  All coordinate values are positive.  The lower left most posistion is (0, 0).
@@ -28,7 +28,7 @@ and moving upward, as follows:
 001 024 025 ... 145 168
 ```
 
-# Tests
+## Tests
 Unit tests use the mocha test framework.
 To install mocha: `npm install mocha`
 To run the tests: `npm test`
