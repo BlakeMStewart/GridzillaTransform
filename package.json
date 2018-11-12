@@ -1,0 +1,17 @@
+{
+  "name": "gridzillatransform",
+  "version": "1.0.0",
+  "description": "Transform a screen buffer to Gridzilla universes",
+  "main": "GridzillaTransform.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Blake M Stewart",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0"
+  }
+}
