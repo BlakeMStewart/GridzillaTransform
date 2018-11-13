@@ -1,5 +1,5 @@
-## This project has been merged in to the drcf2018 project see:
-[drcf2018] (https://github.com/cwmaloney/drcf2018)
+## This project has been merged in to the drcf2018 project
+see: [drcf2018](https://github.com/cwmaloney/drcf2018)
 
 # GridzillaTransform
 This project provides a javascript class that will transform a screen buffer to ArtNet data for the Gridzilla light display.
