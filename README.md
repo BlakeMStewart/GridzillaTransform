@@ -3,8 +3,9 @@ This project provides a javascript class that will transform a screen buffer to 
 
 ## Assumptions
 The screen buffer uses a logical X,Y coordinate system where the origin is in the lower left corner.   
-The format of the screen buffer is a two dimensional array where each cell contains a 3 eleemnt array of RGB values. 
-The screen buffer has a resolution of 168 x 36.  All coordinate values are positive.  The lower left most posistion is (0, 0).
+Logically, the format of the screen buffer is a two dimensional array where each cell contains a 3 eleemnt array of RGB values.  
+The screen buffer is represented by a object that has the method `getPixelColors(x, y)` which returns a 3 element array;
+The screen buffer has a resolution of 168 x 36.  All coordinate values are positive.  The lower left most posistion is (0, 0).  
 The upper right most position is (167, 35).
 
 The Gridzilla layout is as follows:

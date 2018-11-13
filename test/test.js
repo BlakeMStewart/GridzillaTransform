@@ -4,6 +4,35 @@ const { GridzillaTransform } = require("../GridzillaTransform.js");
 //run with: >npm test or IDE run config 
 var universeMap;
 
+class Screen{
+
+  constructor(xSize, ySize) {
+    this.data = Screen.prototype.createArray.call(this, xSize, ySize);
+    //this.data = createArray(xSize, ySize);
+  }
+
+  //Returns a 3 element array containing RGB values
+  getPixelColors(x, y)
+  {
+    return this.data[x][y];
+  }
+
+  setPixelColors(x, y, rgbArray)
+  {
+    this.data[x][y] = rgbArray;
+  }
+
+  createArray(xSize, ySize) {
+    var result = [];
+    for (var x = 0; x < xSize; ++x) {
+      result[x] = [];
+      for (var y = 0; y < ySize; ++y) {
+        result[x][y] = [0, 0, 0];
+      }
+    }
+    return result;
+  };
+}
 
 describe('GridzillaTransfomer tests', function () {
   before(function() {
@@ -14,7 +43,7 @@ describe('GridzillaTransfomer tests', function () {
 
     it('diagonal line', function () {
 
-      var screen = createArray(14,12);
+      var screen = new Screen(14,12);
       diagonalLine(screen, 0, 0, 12);
       
       //transform
@@ -31,7 +60,7 @@ describe('GridzillaTransfomer tests', function () {
   describe('Screen tests', function () {
 
     it('diagonal line', function () {
-      var screen = createArray(168,36);
+      var screen = new Screen(168,36);
       diagonalLine(screen, 0, 0, 36);
       
       //transform
@@ -47,7 +76,7 @@ describe('GridzillaTransfomer tests', function () {
     });
     
     it('horizontal line', function () {
-      var screen = createArray(168,36);
+      var screen = new Screen(168,36);
       horizontalLine(screen, 17, 168);
       
       //transform
@@ -71,26 +100,17 @@ describe('GridzillaTransfomer tests', function () {
   });
 });
 
-function createArray(xSize, ySize) {
-  var result = [];
-  for (var x = 0; x < xSize; ++x) {
-    result[x] = [];
-    for (var y = 0; y < ySize; ++y) {
-      result[x][y] = [0, 0, 0];
-    }
-  }
-  return result;
-};
+
 
 function diagonalLine(screen, x, y, size) {
   for (var i = 0; i < size; ++i){
-    screen[x + i][y + i] = [i+1,i+1,i+1];
+    screen.setPixelColors(x + i, y + i, [i+1,i+1,i+1]);
   }
 };
 
 function horizontalLine(screen, yPosition, length){
   for (var i = 0; i < length; ++i){
-    screen[i][yPosition] = [i+1,i+1,i+1];
+    screen.setPixelColors(i, yPosition, [i+1,i+1,i+1]);
   }
 };
 

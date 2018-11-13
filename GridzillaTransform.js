@@ -104,7 +104,7 @@ class GridzillaTransform {
             if (up) {
                 for (var y = 0; y < GridzillaTransform.universeHeight; ++y) {
                     //get the RGB color
-                    this.artnet.setChannelData(address, universe, channelIndex, screen[xOffset + x][yOffset + y]);
+                    this.artnet.setChannelData(address, universe, channelIndex, screen.getPixelColors(xOffset + x, yOffset + y));
                     channelIndex += 3;
                 }
                 up = false;
@@ -112,7 +112,7 @@ class GridzillaTransform {
             else {
                 for (var y = GridzillaTransform.universeHeight - 1; y >= 0; --y) {
                     //get the RGB color
-                    this.artnet.setChannelData(address, universe, channelIndex, screen[xOffset + x][yOffset + y]);
+                    this.artnet.setChannelData(address, universe, channelIndex, screen.getPixelColors(xOffset + x, yOffset + y));
                     channelIndex += 3;
                 }
                 up = true;
